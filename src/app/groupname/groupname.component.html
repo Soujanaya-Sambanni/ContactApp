@@ -1,0 +1,67 @@
+<nav class="navbar bg-dark">
+    <div class="d-flex">
+        <button class="btn  btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-people-fill"></i></button>
+    </div>
+</nav>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div style="background-color:rgb(0, 0, 0)" class="modal-header">
+                <h5 style="color:white" class="modal-title" id="exampleModalLabel">ADD GROUP</h5>
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <form [formGroup]="groupnameForm">
+                    <div class="form-group mb-2">
+                        <label for="exampleInputEmail1">Enter ID</label>
+                        <input type="number" class="form-control" formControlName="id" placeholder="Enter ID">
+                        <span class="text-danger" *ngIf="groupnameForm.controls['id'].dirty && groupnameForm.hasError('required','id')">*ID is required</span>
+                    </div>
+
+                    <div class="form-group mb-2">
+                        <label for="exampleInputEmail1">Enter Group Name</label>
+                        <input type="name" class="form-control" formControlName="name"
+                            placeholder="Enter Group Name">
+                            <span class="text-danger" *ngIf="groupnameForm.controls['name'].dirty && groupnameForm.hasError('required','name')">*Group Name is required</span>
+                    </div>
+
+                </form>
+            </div>
+
+            <div style="background-color:rgb(13, 14, 13)" class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+                <button (click)="addgroupname(this.groupnameForm.value)" [disabled]="this.groupnameForm.invalid" type="button"
+                    class="btn btn-primary">Add</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid" mt-3>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Group Name</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of data ">
+                <td>{{item.id}}</td>
+                <td>{{item.name}}</td>
+                <td>
+                    <!-- <button class="button-18"(click)="onEdititem(item.id)">Toggle</button>&nbsp;> -->
+                    <i routerLink="/gupdate/{{item.id}}" style="color: #ffa600;" class="bi bi-pencil-fill"></i>  &nbsp; 
+                    <i style="color: red;" (click)="deletegroupname(item.id)" class="bi bi-trash-fill"></i>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>

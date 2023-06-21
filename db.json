@@ -1,0 +1,46 @@
+{
+  "groupName": [
+    {
+      "id": 1,
+      "name": "School"
+    },
+    {
+      "id": 2,
+      "name": "Family"
+    },
+    {
+      "id": 3,
+      "name": "Work"
+    }
+  ],
+  "contact": [
+    {
+      "cname": "Soujanya",
+      "address": "Bijapur",
+      "number": 9828369386,
+      "groupname": "School",
+      "id": 1
+    },
+    {
+      "cname": "Komal",
+      "address": "Banjara Cross",
+      "number": 8626763459,
+      "groupname": "School",
+      "id": 2
+    },
+    {
+      "cname": "Varsha",
+      "address": "Bagalkot",
+      "number": 9745658745,
+      "groupname": "Family",
+      "id": 3
+    },
+    {
+      "cname": "Soniya",
+      "address": "Toravi",
+      "number": 9865436565,
+      "groupname": "Family",
+      "id": 4
+    }
+  ]
+}
